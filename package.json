@@ -51,5 +51,12 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "overrides": {
+  "react-wordcloud": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
+}
+
 }
