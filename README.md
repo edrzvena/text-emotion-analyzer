@@ -144,12 +144,39 @@ public/
 
 ## Instalasi & Menjalankan
 
-### Prasyarat
+### Opsi A — Docker (paling mudah, tanpa install Node.js)
+
+Cukup punya **Docker** + **Docker Compose**.
+
+```bash
+# 1. Clone repo
+git clone <url-repo>
+cd nrc-emotion-lexicon
+
+# 2. Build & jalankan
+docker compose up --build
+```
+
+Buka browser ke `http://localhost:3000`. Untuk berhenti: `docker compose down`.
+
+Tanpa Compose:
+
+```bash
+docker build -t nrc-emotion-lexicon .
+docker run -p 3000:80 nrc-emotion-lexicon
+```
+
+> Image produksi memakai **multi-stage build**: tahap pertama build dengan Node,
+> tahap kedua menyajikan file statis lewat **Nginx** (dikonfigurasi untuk SPA).
+
+### Opsi B — Lokal dengan Node.js
+
+#### Prasyarat
 
 - Node.js >= 14
 - npm >= 6
 
-### Langkah
+#### Langkah
 
 ```bash
 # 1. Clone repo

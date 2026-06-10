@@ -1,0 +1,10 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nrc-emotion-lexicon
+    container_name: nrc-emotion-lexicon
+    ports:
+      - "3000:80"
+    restart: unless-stopped
